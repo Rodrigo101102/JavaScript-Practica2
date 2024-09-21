@@ -3,13 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Factura Interactivo</title>
     <link rel="stylesheet" href="style.css">
-    <script src="add_01.js"></script>
+    <script src="./add.js"></script>
+    <title>Factura Digital</title>    
 </head>
 <body>
-    <form class="invoice" id="invoiceForm">
-        <table class="invoice__table">
+    <div class="factura">
+        <h1 class="factura__titulo">FACTURA</h1>
+        <div class="factura__cabecera">
+            <div class="factura__campo">
+                <label class="factura__label">Nº:</label>
+                <input type="text" class="factura__input" id="numero">
+            </div>
+            <div class="factura__campo">
+                <label class="factura__label">Fecha:</label>
+                <input type="date" class="factura__input" id="fecha">
+            </div>
+        </div>
+        <div class="factura__campo">
+            <label class="factura__label">Cliente:</label>
+            <input type="text" class="factura__input" id="cliente">
+        </div>
+        <div class="factura__campo">
+            <label class="factura__label">N.I.F.:</label>
+            <input type="text" class="factura__input" id="nif">
+        </div>
+        <div class="factura__campo">
+            <label class="factura__label">Domicilio:</label>
+            <input type="text" class="factura__input" id="domicilio">
+        </div>
+        <div class="factura__campo">
+            <label class="factura__label">Pago:</label>
+            <input type="text" class="factura__input" id="pago">
+        </div>
+        <table class="factura__tabla">
             <thead>
                 <tr>
                     <th>Cantidad</th>
@@ -19,28 +46,31 @@
                     <th>Acciones</th>
                 </tr>
             </thead>
-            <tbody id="invoiceItems">
-                <!-- Invoice items will be added here dynamically -->
+            <tbody id="itemsFactura">
+                <!-- Aquí se agregarán las filas dinámicamente -->
             </tbody>
         </table>
-        <button type="button" class="invoice__button" id="addLineButton">Agregar Línea</button>
-        
-        <div class="invoice__summary">
-            <span class="invoice__summary-label">Total Bruto:</span>
-            <input type="number" class="invoice__input" id="totalBruto" readonly>
-            
-            <span class="invoice__summary-label">Descuento:</span>
-            <input type="number" class="invoice__input" id="descuento">
-            
-            <span class="invoice__summary-label">Base Imponible:</span>
-            <input type="number" class="invoice__input" id="baseImponible" readonly>
-            
-            <span class="invoice__summary-label">I.V.A. 21%:</span>
-            <input type="number" class="invoice__input" id="iva" readonly>
-            
-            <span class="invoice__summary-label">TOTAL:</span>
-            <input type="number" class="invoice__input" id="total" readonly>
+        <button class="factura__boton" onclick="agregarFila()">Agregar Línea</button>
+        <div class="factura__totalbruto">
+            <span>Total Bruto:</span>
+            <input type="number" class="factura__input" id="totalBruto" readonly>
         </div>
-    </form>
+        <div class="factura__descuento">
+            <span>Descuento:</span>
+            <input type="number" class="factura__input" id="descuento" onchange="calcularTotal()">
+        </div>
+        <div class="factura__base">
+            <span>Base Imponible:</span>
+            <input type="number" class="factura__input" id="baseImponible" readonly>
+        </div>
+        <div class="factura__iva">
+            <span>I.V.A. 21%:</span>
+            <input type="number" class="factura__input" id="iva" readonly>
+        </div>
+        <div class="factura__total">
+            <span>TOTAL:</span>
+            <input type="number" class="factura__input" id="total" readonly>
+        </div>
+    </div>
 </body>
 </html>
