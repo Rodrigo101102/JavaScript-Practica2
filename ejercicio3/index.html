@@ -5,9 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
-    <script src="ejercicio3.js"></script>
 </head>
 <body>
+    <div class="container">
+
+        <h1>Cálculo de IVA</h1>
+    <label for="importe">Importe de la compra:</label>
+    <input type="number" id="importe" placeholder="Ingresa el importe" required>
+
+    <label for="iva">Tipo de IVA:</label>
+    <select id="iva">
+        <option value="10">Básico (10%)</option>
+        <option value="5">Reducido (5%)</option>
+        <option value="2">Superreducido (2%)</option>
+    </select>
+
+    <button onclick="calcularIVA()">Calcular Total</button>
+
+    <div id="resultado"></div>
+    <script src="ejercicio3.js"></script>
+    </div>
     
 </body>
 </html>
