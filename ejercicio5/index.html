@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Factura Interactivo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="add_01.js"></script>
+</head>
+<body>
+    <form class="invoice" id="invoiceForm">
+        <table class="invoice__table">
+            <thead>
+                <tr>
+                    <th>Cantidad</th>
+                    <th>Concepto/Referencia</th>
+                    <th>Precio</th>
+                    <th>Importe</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="invoiceItems">
+                <!-- Invoice items will be added here dynamically -->
+            </tbody>
+        </table>
+        <button type="button" class="invoice__button" id="addLineButton">Agregar Línea</button>
+        
+        <div class="invoice__summary">
+            <span class="invoice__summary-label">Total Bruto:</span>
+            <input type="number" class="invoice__input" id="totalBruto" readonly>
+            
+            <span class="invoice__summary-label">Descuento:</span>
+            <input type="number" class="invoice__input" id="descuento">
+            
+            <span class="invoice__summary-label">Base Imponible:</span>
+            <input type="number" class="invoice__input" id="baseImponible" readonly>
+            
+            <span class="invoice__summary-label">I.V.A. 21%:</span>
+            <input type="number" class="invoice__input" id="iva" readonly>
+            
+            <span class="invoice__summary-label">TOTAL:</span>
+            <input type="number" class="invoice__input" id="total" readonly>
+        </div>
+    </form>
+</body>
+</html>
