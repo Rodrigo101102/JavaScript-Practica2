@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="./add.js" defer></script>
+    <link rel="icon" href="../imagenes/icono.ico" type="image/x-icon">
     <title>Factura Digital</title>    
 </head>
 <body>
@@ -31,7 +32,7 @@
         </div>
         <div class="contenedor2_factura_campo">
             <label class="contenedor2_factura_label">R.U.C:</label>
-            <input type="text" class="contenedor2_factura_input" id="RUC">
+            <input type="text" class="contenedor2_factura_input" id="RUC" maxlength="10">
         </div>
         <div class="contenedor2_factura_campo">
             <label class="contenedor2_factura_label">Dirección del cliente:</label>
@@ -89,6 +90,10 @@
             <div class="contenedor4_factura_descuento">
                 <label class="contenedor4_label">Descuento</label>
                 <input type="number" class="contenedor4_factura_input" id="descuento" onchange="calcularTotal()">
+            </div>
+            <div class="contenedor4_factura_valorVenta">
+                <label class="contenedor4_label">Valor Venta</label>
+                <input type="number" class="contenedor4_factura_input" id="valorVenta" readonly>
             </div>
             <div class="contenedor4_factura_igv">
                 <label class="contenedor4_label">I.G.V 18%</label>

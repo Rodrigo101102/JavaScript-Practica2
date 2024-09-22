@@ -34,8 +34,9 @@ function calcularTotal() {
     document.getElementById('subTotalVentas').value = subTotalVentas.toFixed(2);
     
     const descuento = parseFloat(document.getElementById('descuento').value) || 0;
-
-    const igv = (subTotalVentas - descuento) * 0.18;;
+    const valorVenta=subTotalVentas-descuento;
+    document.getElementById('valorVenta').value= valorVenta.toFixed(2);
+    const igv = (valorVenta) * 0.18;
     document.getElementById('igv').value = igv.toFixed(2);
     const total = (subTotalVentas - descuento) + igv;
     document.getElementById('total').value = total.toFixed(2);
