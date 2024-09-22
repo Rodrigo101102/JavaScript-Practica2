@@ -20,67 +20,67 @@
                     <h2>RUC 1074295413</h2>
             </div>
         </div>
-    <div class="contenedor2">
-        <div class="contenedor2_factura_campo">
-            <label class="contenedor2_factura_label">Fecha de Emisión:</label>
-            <input type="date" class="contenedor2_factura_input" id="fecha">
+        <div class="contenedor2">
+            <div class="contenedor2_factura_campo">
+                <label class="contenedor2_factura_label">Fecha de Emisión:</label>
+                <input type="date" class="contenedor2_factura_input" id="fecha">
+            </div>
+            <div class="contenedor2_factura_campo">
+                <label class="contenedor2_factura_label">Señor(es):</label>
+                <input type="text" class="contenedor2_factura_input" id="cliente">
+            </div>
+            <div class="contenedor2_factura_campo">
+                <label class="contenedor2_factura_label">R.U.C:</label>
+                <input type="text" class="contenedor2_factura_input" id="RUC">
+            </div>
+            <div class="contenedor2_factura_campo">
+                <label class="contenedor2_factura_label">Dirección del cliente:</label>
+                <input type="text" class="contenedor2_factura_input" id="direccion">
+            </div>
+            <div class="contenedor2_factura_campo">
+                <label class="contenedor2_factura_label">Tipo de moneda:</label>
+                <input type="text" class="contenedor2_factura_input" id="tipo_moneda">
+            </div>
         </div>
-        <div class="contenedor2_factura_campo">
-            <label class="contenedor2_factura_label">Señor(es):</label>
-            <input type="text" class="contenedor2_factura_input" id="cliente">
-        </div>
-        <div class="contenedor2_factura_campo">
-            <label class="contenedor2_factura_label">R.U.C:</label>
-            <input type="text" class="contenedor2_factura_input" id="RUC">
-        </div>
-        <div class="contenedor2_factura_campo">
-            <label class="contenedor2_factura_label">Dirección del cliente:</label>
-            <input type="text" class="contenedor2_factura_input" id="direccion">
-        </div>
-        <div class="contenedor2_factura_campo">
-            <label class="contenedor2_factura_label">Tipo de moneda:</label>
-            <input type="text" class="contenedor2_factura_input" id="tipo_moneda">
-        </div>
-    </div>
-    <div class="contenedor3">
-        <table class="contenedor3_tabla" >
-            <thead>
-                <tr class="contenedor3_fila">
-                    <th class="contenedor3_factura_encabezado_numero">Cantidad</th>
-                    <th class="contenedor3_factura_encabezado_numero">Unidad de medida</th>
-                    <th class="contenedor3_factura_encabezado_texto">Descripción</th>
-                    <th class="contenedor3_factura_encabezado_numero">Valor Unitario</th>
-                    <th class="contenedor3_factura_encabezado_numero">Importe</th>
-                    <th class="contenedor3_factura_encabezado_numero">Acciones</th>
-                </tr>
-            </thead>
-            <tbody id="itemsFactura">
-                <template id="filaFactura">
+        <div class="contenedor3">
+            <table class="contenedor3_tabla" >
+                <thead>
                     <tr class="contenedor3_fila">
-                        <td>
-                            <input type="number" class="contenedor3_factura_input_numero" onchange="calcularFila(this)">
-                        </td>
-                        <td>
-                            <input type="texto" class="contenedor3_factura_input_numero">
-                        </td>
-                        <td>
-                            <input type="text" class="contenedor3_factura_input_texto"></td>
-                        <td>
-                            <input type="number" class="contenedor3_factura_input_numero" onchange="calcularFila(this)"></td>
-                        <td>
-                            <input type="number" class="contenedor3_factura_input_numero" readonly></td>
-                
-                        <td>
-                            <button  class="contenedor3_factura_input_numero" onclick="eliminarFila(this)">Eliminar</button>
-                        </td>
-                
+                        <th class="contenedor3_factura_encabezado_numero">Cantidad</th>
+                        <th class="contenedor3_factura_encabezado_numero">Unidad de medida</th>
+                        <th class="contenedor3_factura_encabezado_texto">Descripción</th>
+                        <th class="contenedor3_factura_encabezado_numero">Valor Unitario</th>
+                        <th class="contenedor3_factura_encabezado_numero">Importe</th>
+                        <th class="contenedor3_factura_encabezado_numero">Acciones</th>
                     </tr>
-                </template>
-                
-            </tbody>
-        </table>
-        <button class="contenedor3_boton_agregar" onclick="agregarFila()">Agregar</button>
-    </div>
+                </thead>
+                <tbody id="itemsFactura">
+                    <template id="filaFactura">
+                        <tr class="contenedor3_fila">
+                            <td>
+                                <input type="number" class="contenedor3_factura_input_numero" onchange="calcularFila(this)">
+                            </td>
+                            <td>
+                                <input type="texto" class="contenedor3_factura_input_numero">
+                            </td>
+                            <td>
+                                <input type="text" class="contenedor3_factura_input_texto"></td>
+                            <td>
+                                <input type="number" class="contenedor3_factura_input_numero" onchange="calcularFila(this)"></td>
+                            <td>
+                                <input type="number" class="contenedor3_factura_input_numero" readonly></td>
+                    
+                            <td>
+                                <button  class="contenedor3_factura_input_numero" onclick="eliminarFila(this)">Eliminar</button>
+                            </td>
+                    
+                        </tr>
+                    </template>
+                    
+                </tbody>
+            </table>
+            <button class="contenedor3_boton_agregar" onclick="agregarFila()">Agregar</button>
+        </div>
         <div class="contenedor4">
             <div class="contenedor4_factura_totalbruto">
                 <label class="contenedor4_label">Sub total Ventas</label>

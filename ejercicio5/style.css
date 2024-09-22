@@ -19,10 +19,10 @@ evitando desbordamientos. */
         border-style: solid;
     }
     .contenedor1 h2{
-        font-size: 18px;    
+        font-size: 1.8vw;    
     }
     .contenedor1 p{
-        font-size: 15px;
+        font-size: 1.5vw;
     }
     .contenedor1_detalles_info{ 
         padding-left: 10px;
@@ -42,14 +42,15 @@ evitando desbordamientos. */
         margin-bottom: 5px;
         }
     .contenedor1_factura_informacion h1{
-        font-size: 20px;
-        line-height: 7px;
+        font-size: 2vw;
+        line-height: 1.2;
         text-align: center; 
-        margin-top: 20px;
+        margin-top: 1vw;
     }
     .contenedor1_factura_informacion h2{
-        font-size: 18px;
-        line-height: 7px;
+        margin-top: 1vw;
+        font-size: 1.8vw;
+        line-height: 0.7em;
         text-align: center;
     }
     .contenedor1_factura_informacion h3{
