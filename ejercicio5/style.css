@@ -1,61 +1,163 @@
- .factura {
-            font-family: Arial, sans-serif;
-            max-width: 1800px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
+/*Seleeccionamos todos los elementos de la página */
+*,
+/*Aseguramos que el padding y el borde estén incluidos dentro de los anchos y altos definidos, 
+evitando desbordamientos. */
+*::before,*::after {
+    box-sizing: border-box;
+}
+.factura {
+    font-family: Arial, sans-serif;
+    max-width: 100%;
+    padding: 10px;
+    border: 2px solid #dd6f6f;  
         }
-        .factura__titulo {
-            text-align: center;
-            color: #f39c12;
-            border-bottom: 2px solid #f39c12;
-            padding-bottom: 10px;
+    .contenedor1{
+        display: flex;
+        width: 100%;
+        border-width: 2px;
+        border-color: black;
+        border-style: solid;
+    }
+    .contenedor1 h2{
+        font-size: 18px;    
+    }
+    .contenedor1 p{
+        font-size: 15px;
+    }
+    .contenedor1_detalles_info{ 
+        padding-left: 10px;
+    }
+    .contenedor1_detalles_info h2,.contenedor1_detalles_info p{
+        line-height: 7px;
+    }
+    .contenedor1_factura_informacion{
+        width: 20%; 
+        background-color: #ffffff;
+        border-width: 2.5px;
+        border-color: black;
+        border-style: solid;
+        margin-left: auto;
+        margin-top: 5px;
+        margin-right: 3px;
+        margin-bottom: 5px;
         }
-        .factura__cabecera {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        .factura__campo {
-            margin-bottom: 10px;
-        }
-        .factura__label {
-            font-weight: bold;
-            display: inline-block;
-            width: 100px;
-        }
-        .factura__input {
-            width: 200px;
-            padding: 5px;
-        }
-        .factura__tabla {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .factura__tabla th, .factura__tabla td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        .factura__tabla th {
-            background-color: #f2f2f2;
-        }
-        .factura__boton {
-            padding: 5px 10px;
-            margin-right: 5px;
-            cursor: pointer;
-        }
-        .factura__totalbruto, .factura__descuento, .factura__base, .factura__iva, .factura__total {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 10px;
-        }
-        .factura__totalbruto span, .factura__descuento span, .factura__base span, .factura__iva span, .factura__total span {
-            width: 150px;
-            text-align: right;
-            padding-right: 10px;
-        }
-        .factura__total {
-            font-weight: bold;
-        }
-    
+    .contenedor1_factura_informacion h1{
+        font-size: 20px;
+        line-height: 7px;
+        text-align: center; 
+        margin-top: 20px;
+    }
+    .contenedor1_factura_informacion h2{
+        font-size: 18px;
+        line-height: 7px;
+        text-align: center;
+    }
+    .contenedor1_factura_informacion h3{
+        font-size: 16px;
+        line-height: 7px;
+        text-align: center;
+    }
+    .contenedor2{
+        width: 100%;
+        border-width: 2px;
+        border-color: black;
+        border-style: solid;
+        padding: 10px;
+    }
+
+    .contenedor2_factura_campo {
+        margin-bottom: 10px;
+    }
+    .contenedor2_factura_label {
+        width: 300px;
+        font-weight: bold;
+        display: inline-block;
+    }
+    .contenedor2_factura_input{
+        font-size: 15px;
+        text-align: center;
+        border-radius:3px;
+        width: 30%;
+        height: 30px;
+    }
+    .contenedor3{
+        width: 100%;
+        border-width: 2px;
+        border-color: black;
+        border-style: solid;
+        padding: 10px;
+    }
+    .contenedor3_tabla{
+        width: 100%;
+        table-layout: fixed; /* Añadido para un layout de tabla fijo */
+        border-collapse: collapse; /* Elimina espacios entre celdas */
+    }
+    .contenedor3_fila{
+        width: 100%;
+    }
+    .contenedor3_factura_encabezado_numero{
+        width: 15%; 
+        flex:0.2;
+        font-size: 14px;
+        height: 30px;
+        border-color: rgb(228, 198, 198);
+        border-style: solid;
+        border-width: 2px;
+        text-align: center; 
+    }
+
+    .contenedor3_factura_encabezado_texto{
+        width: 40%;
+        flex:1;
+        border-color: rgb(228, 198, 198);
+        border-style: solid;
+        border-width: 2px;  
+        text-align: center; /* Centrar texto en encabezados de texto */
+
+    }
+    .contenedor3_factura_input_numero{
+        text-align: center;
+        width: 100%;
+        height: 30px;
+        border-radius: 3px;
+    }
+    .contenedor3_factura_input_texto{
+        width: 100%;
+        height: 30px;
+        border-radius:3px;
+    }
+    .contenedor3_button_eliminar{
+        background-color: rgb(190, 161, 161);
+    }
+    .contenedor3_boton_agregar{
+        width:13% ;
+        height: 40px;
+        background-color: rgba(102, 185, 102, 0.568);
+        border-radius: 5px;
+    }
+
+    .contenedor4{
+        width: 100%;
+        border-width: 2px;
+        border-color: black;
+        border-style: solid;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .contenedor4_label{
+        margin-top: 5px;
+        margin-right: 3px;
+    }
+    .contenedor4_factura_input{
+        width: 20%;
+        height: 30px;
+        border-radius: 5px;
+    }
+    .contenedor4_factura_total {
+        font-weight: bold;
+    }
+    .contenedor4_factura_totalbruto, .contenedor4_factura_descuento, .contenedor4_factura_base, .contenedor4_factura_igv, .contenedor4_factura_total {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
+    }

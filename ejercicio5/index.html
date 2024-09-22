@@ -4,72 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="./add.js"></script>
+    <script src="./add.js" defer></script>
     <title>Factura Digital</title>    
 </head>
 <body>
     <div class="factura">
-        <h1 class="factura__titulo">FACTURA</h1>
-        <div class="factura__cabecera">
-            <div class="factura__campo">
-                <label class="factura__label">Nº:</label>
-                <input type="text" class="factura__input" id="numero">
+        <div class="contenedor1">
+            <div class="contenedor1_detalles_info">
+                <h2>SEBASTIAN RODRIGO TORRES RAMOS</h2>
+                <p>CAL.ROSARIO 497</p>
+                <p>CHINCHA ALTA-CHINCHA-ICA</p>
             </div>
-            <div class="factura__campo">
-                <label class="factura__label">Fecha:</label>
-                <input type="date" class="factura__input" id="fecha">
+            <div class="contenedor1_factura_informacion">
+                    <h1>FACTURA ELECTRONICA</h1>
+                    <h2>RUC 1074295413</h2>
             </div>
         </div>
-        <div class="factura__campo">
-            <label class="factura__label">Cliente:</label>
-            <input type="text" class="factura__input" id="cliente">
+    <div class="contenedor2">
+        <div class="contenedor2_factura_campo">
+            <label class="contenedor2_factura_label">Fecha de Emisión:</label>
+            <input type="date" class="contenedor2_factura_input" id="fecha">
         </div>
-        <div class="factura__campo">
-            <label class="factura__label">N.I.F.:</label>
-            <input type="text" class="factura__input" id="nif">
+        <div class="contenedor2_factura_campo">
+            <label class="contenedor2_factura_label">Señor(es):</label>
+            <input type="text" class="contenedor2_factura_input" id="cliente">
         </div>
-        <div class="factura__campo">
-            <label class="factura__label">Domicilio:</label>
-            <input type="text" class="factura__input" id="domicilio">
+        <div class="contenedor2_factura_campo">
+            <label class="contenedor2_factura_label">R.U.C:</label>
+            <input type="text" class="contenedor2_factura_input" id="RUC">
         </div>
-        <div class="factura__campo">
-            <label class="factura__label">Pago:</label>
-            <input type="text" class="factura__input" id="pago">
+        <div class="contenedor2_factura_campo">
+            <label class="contenedor2_factura_label">Dirección del cliente:</label>
+            <input type="text" class="contenedor2_factura_input" id="direccion">
         </div>
-        <table class="factura__tabla">
+        <div class="contenedor2_factura_campo">
+            <label class="contenedor2_factura_label">Tipo de moneda:</label>
+            <input type="text" class="contenedor2_factura_input" id="tipo_moneda">
+        </div>
+    </div>
+    <div class="contenedor3">
+        <table class="contenedor3_tabla" >
             <thead>
-                <tr>
-                    <th>Cantidad</th>
-                    <th>Concepto/Referencia</th>
-                    <th>Precio</th>
-                    <th>Importe</th>
-                    <th>Acciones</th>
+                <tr class="contenedor3_fila">
+                    <th class="contenedor3_factura_encabezado_numero">Cantidad</th>
+                    <th class="contenedor3_factura_encabezado_numero">Unidad de medida</th>
+                    <th class="contenedor3_factura_encabezado_texto">Descripción</th>
+                    <th class="contenedor3_factura_encabezado_numero">Valor Unitario</th>
+                    <th class="contenedor3_factura_encabezado_numero">Importe</th>
+                    <th class="contenedor3_factura_encabezado_numero">Acciones</th>
                 </tr>
             </thead>
             <tbody id="itemsFactura">
-                <!-- Aquí se agregarán las filas dinámicamente -->
+                <template id="filaFactura">
+                    <tr class="contenedor3_fila">
+                        <td>
+                            <input type="number" class="contenedor3_factura_input_numero" onchange="calcularFila(this)">
+                        </td>
+                        <td>
+                            <input type="texto" class="contenedor3_factura_input_numero">
+                        </td>
+                        <td>
+                            <input type="text" class="contenedor3_factura_input_texto"></td>
+                        <td>
+                            <input type="number" class="contenedor3_factura_input_numero" onchange="calcularFila(this)"></td>
+                        <td>
+                            <input type="number" class="contenedor3_factura_input_numero" readonly></td>
+                
+                        <td>
+                            <button  class="contenedor3_factura_input_numero" onclick="eliminarFila(this)">Eliminar</button>
+                        </td>
+                
+                    </tr>
+                </template>
+                
             </tbody>
         </table>
-        <button class="factura__boton" onclick="agregarFila()">Agregar Línea</button>
-        <div class="factura__totalbruto">
-            <span>Total Bruto:</span>
-            <input type="number" class="factura__input" id="totalBruto" readonly>
-        </div>
-        <div class="factura__descuento">
-            <span>Descuento:</span>
-            <input type="number" class="factura__input" id="descuento" onchange="calcularTotal()">
-        </div>
-        <div class="factura__base">
-            <span>Base Imponible:</span>
-            <input type="number" class="factura__input" id="baseImponible" readonly>
-        </div>
-        <div class="factura__iva">
-            <span>I.V.A. 21%:</span>
-            <input type="number" class="factura__input" id="iva" readonly>
-        </div>
-        <div class="factura__total">
-            <span>TOTAL:</span>
-            <input type="number" class="factura__input" id="total" readonly>
+        <button class="contenedor3_boton_agregar" onclick="agregarFila()">Agregar</button>
+    </div>
+        <div class="contenedor4">
+            <div class="contenedor4_factura_totalbruto">
+                <label class="contenedor4_label">Sub total Ventas</label>
+                <input type="number" class="contenedor4_factura_input" id="subTotalVentas" readonly>
+            </div>
+            <div class="contenedor4_factura_descuento">
+                <label class="contenedor4_label">Descuento</label>
+                <input type="number" class="contenedor4_factura_input" id="descuento" onchange="calcularTotal()">
+            </div>
+            <div class="contenedor4_factura_igv">
+                <label class="contenedor4_label">I.G.V 18%</label>
+                <input type="number" class="contenedor4_factura_input" id="igv" readonly>
+            </div>
+            <div class="contenedor4_factura_total">
+                <label class="contenedor4_label">TOTAL</label>
+                <input type="number" class="contenedor4_factura_input" id="total" readonly>
+            </div>
         </div>
     </div>
 </body>
