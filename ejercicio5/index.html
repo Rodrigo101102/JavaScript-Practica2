@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="./add.js" defer></script>
+    <link rel="icon" href="../imagenes/icono.ico" type="image/x-icon">
     <title>Factura Digital</title>    
 </head>
 <body>
@@ -42,9 +43,43 @@
                 <input type="text" class="contenedor2_factura_input" id="tipo_moneda">
             </div>
         </div>
+<<<<<<< HEAD
         <div class="contenedor3">
             <table class="contenedor3_tabla" >
                 <thead>
+=======
+        <div class="contenedor2_factura_campo">
+            <label class="contenedor2_factura_label">Señor(es):</label>
+            <input type="text" class="contenedor2_factura_input" id="cliente">
+        </div>
+        <div class="contenedor2_factura_campo">
+            <label class="contenedor2_factura_label">R.U.C:</label>
+            <input type="text" class="contenedor2_factura_input" id="RUC" maxlength="10">
+        </div>
+        <div class="contenedor2_factura_campo">
+            <label class="contenedor2_factura_label">Dirección del cliente:</label>
+            <input type="text" class="contenedor2_factura_input" id="direccion">
+        </div>
+        <div class="contenedor2_factura_campo">
+            <label class="contenedor2_factura_label">Tipo de moneda:</label>
+            <input type="text" class="contenedor2_factura_input" id="tipo_moneda">
+        </div>
+    </div>
+    <div class="contenedor3">
+        <table class="contenedor3_tabla" >
+            <thead>
+                <tr class="contenedor3_fila">
+                    <th class="contenedor3_factura_encabezado_numero">Cantidad</th>
+                    <th class="contenedor3_factura_encabezado_numero">Unidad de medida</th>
+                    <th class="contenedor3_factura_encabezado_texto">Descripción</th>
+                    <th class="contenedor3_factura_encabezado_numero">Valor Unitario</th>
+                    <th class="contenedor3_factura_encabezado_numero">Importe</th>
+                    <th class="contenedor3_factura_encabezado_numero">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="itemsFactura">
+                <template id="filaFactura">
+>>>>>>> bae72247b12f6e0cbd38c71eca7bb700621c4a11
                     <tr class="contenedor3_fila">
                         <th class="contenedor3_factura_encabezado_numero">Cantidad</th>
                         <th class="contenedor3_factura_encabezado_numero">Unidad de medida</th>
@@ -89,6 +124,10 @@
             <div class="contenedor4_factura_descuento">
                 <label class="contenedor4_label">Descuento</label>
                 <input type="number" class="contenedor4_factura_input" id="descuento" onchange="calcularTotal()">
+            </div>
+            <div class="contenedor4_factura_valorVenta">
+                <label class="contenedor4_label">Valor Venta</label>
+                <input type="number" class="contenedor4_factura_input" id="valorVenta" readonly>
             </div>
             <div class="contenedor4_factura_igv">
                 <label class="contenedor4_label">I.G.V 18%</label>
